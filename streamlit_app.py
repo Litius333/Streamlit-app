@@ -43,3 +43,16 @@ with st.sidebar:
     tb1 = st.table(avg_tip_by_time)
 
     tb2 = st.table(avg_bill_by_day)
+
+Total_bill = df['total_bill'].sum()
+
+
+a, b, c = st.columns(3)
+a.metric(label='Facturación Total', value=Total_bill, border=True, width='content')
+b.metric(label='Facturación Total', value=Total_bill, border=True, width='content')
+c.metric(label='Facturación Total', value=Total_bill, border=True, width='content')
+
+d, e = st.columns(2)
+d.table(avg_bill_by_day)
+e.table(avg_tip_by_time)
+
